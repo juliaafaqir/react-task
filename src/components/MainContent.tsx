@@ -16,9 +16,6 @@ function MainContent(){
 {    alertVisible && <Alert onClose={()=>setAlertVisibility(false)}>My Alert</Alert>
 }    <ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem} />
 
-    <Button color="dark" onClick={() => setAlertVisibility(true)}>
-        My Button
-    </Button>
     </>
     )
 }
