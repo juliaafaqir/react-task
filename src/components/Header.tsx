@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 
 const Header = () => {
@@ -12,9 +12,9 @@ const Header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Link to="/"> Home </Link>
-            <Link to="/about"> About </Link>
-            <Link to="/contact"> Contact </Link>
+            <NavLink to="/"> Home </NavLink>
+            <NavLink to="/about"> About </NavLink>
+            <NavLink to="/contact"> Contact </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
