@@ -4,8 +4,7 @@ import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Contact } from "./pages/Contact";
 import { NotFound } from "./pages/NotFound";
-import { ThemeContextProvider } from "./components/context/ThemeContext";
-import { Box } from "./components/context/Box";
+
 import "./App.css";
 
 function App() {
@@ -18,9 +17,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-      <ThemeContextProvider>
-        <Box />
-      </ThemeContextProvider>
+
     </>
   );
 }
