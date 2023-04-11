@@ -1,69 +1,25 @@
-import React, { useState } from 'react';
-import {
-  MDBNavbar,
-  MDBNavbarNav,
-  MDBNavbarItem,
-  MDBNavbarLink,
-  MDBNavbarToggler,
-  MDBContainer,
-  MDBIcon,
-  MDBCollapse,
-  MDBBtn
-} from 'mdb-react-ui-kit';
-import Button from "./Button"
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
-  const [showBasic, setShowBasic] = useState(false);
   return (
-    <header>
-      <MDBNavbar expand='lg' light bgColor='white'>
-        <MDBContainer fluid>
-          <MDBNavbarToggler
-            onClick={() => setShowBasic(!showBasic)}
-            aria-controls='navbarExample01'
-            aria-expanded='false'
-            aria-label='Toggle navigation'
-          >
-            <i className="fas fa-bars"></i>
-          </MDBNavbarToggler>
-          <MDBCollapse navbar show={showBasic}>
-            <MDBNavbarNav right className='mb-2 mb-lg-0'>
-              <MDBNavbarItem active>
-                <MDBNavbarLink aria-current='page' href='#'>
-                  Home
-                </MDBNavbarLink>
-              </MDBNavbarItem>
-              <MDBNavbarItem>
-                <MDBNavbarLink href='#'>Features</MDBNavbarLink>
-              </MDBNavbarItem>
-              <MDBNavbarItem>
-                <MDBNavbarLink href='#'>Pricing</MDBNavbarLink>
-              </MDBNavbarItem>
-              <MDBNavbarItem>
-                <MDBNavbarLink href='#'>About</MDBNavbarLink>
-              </MDBNavbarItem>
-            </MDBNavbarNav>
-          </MDBCollapse>
-        </MDBContainer>
-      </MDBNavbar>
-
-      <div
-        className='p-5 text-center bg-image'
-        style={{ backgroundImage: "url('https://mdbootstrap.com/img/new/slides/041.webp')", height: '400px' }}
-      >
-        <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
-          <div className='d-flex justify-content-center align-items-center h-100'>
-            <div className='text-white'>
-              <h1 className='mb-3'>Heading</h1>
-              <h4 className='mb-3'>Subheading</h4>
-<Button onClick={() => console.log('action')}> Call to Action</Button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Container>
+        <Navbar.Brand href="/">React Routing Task</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <Link to="/"> Home </Link>
+            <Link to="/about"> About </Link>
+            <Link to="/contact"> Contact </Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
-}
+};
 
-export default Header
+export default Header;

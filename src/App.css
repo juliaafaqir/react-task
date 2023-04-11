@@ -1,0 +1,11 @@
+#responsive-navbar-nav > div a{
+    color:white !important;
+    margin-right: 10px !important;
+    text-decoration: none !important;
+}
+
+img{
+    vertical-align: center !important;
+    align-items: center;
+    text-align: center;
+}
