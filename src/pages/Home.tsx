@@ -1,16 +1,23 @@
 import React, { useState, useReducer, useEffect } from 'react';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import axios from "axios";
+import axios, { AxiosResponse, AxiosError } from 'axios';
+const Axios = axios.defaults;
+
+interface postProps {
+  title: String;
+  body: String
+}
 
 const client = axios.create({
   baseURL: "https://jsonplaceholder.typicode.com/posts" 
 });
 export const Home = () => {
-  const [post, setPost] = useState<any[]>([]);
+  const [post, setPost] = useState<postProps>();
+  
   useEffect(() => {
     async function getPost() {
-      const response = await client.get("/1");
+      const response: AxiosResponse<any> = await axios.get("/1");
       setPost(response.data);
     }
     getPost();
@@ -19,8 +26,8 @@ export const Home = () => {
   async function deletePost() {
     await client.delete("/1");
     alert("Post deleted!");
-    setPost(null);
   }
+
   if (!post) return "No post!"
   return (
     <>
