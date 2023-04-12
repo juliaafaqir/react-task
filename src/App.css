@@ -1,12 +1,11 @@
-#responsive-navbar-nav > div a{
-    color:white !important;
-    margin-right: 10px !important;
-    text-decoration: none !important;
+#responsive-navbar-nav > div a {
+  color: white !important;
+  margin-right: 10px !important;
+  text-decoration: none !important;
 }
 
-img{
-    vertical-align: center !important;
-    align-items: center;
-    text-align: center;
-}
-
+img {
+  vertical-align: center !important;
+  align-items: center;
+  text-align: center;
+}/*# sourceMappingURL=App.css.map */
