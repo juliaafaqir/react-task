@@ -28,7 +28,7 @@ export const Home = () => {
     setPost(undefined)
   }
 
-  if (!post) return "No post!"
+  if (!post) return <><div>No post!</div></>
   return (
     <>
       <Header />
