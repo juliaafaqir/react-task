@@ -25,7 +25,7 @@ export const Home = () => {
   async function deletePost() {
     await client.delete("/1");
     alert("Post deleted!");
-    setPost({})
+    setPost(undefined)
   }
 
   if (!post) return "No post!"
