@@ -1,10 +1,9 @@
 import React, { useState, useReducer, useEffect } from 'react';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import axios, { AxiosResponse, AxiosError } from 'axios';
-const Axios = axios.defaults;
+import axios from "axios";
 
-interface postProps {
+type postProps ={
   title: String;
   body: String
 }
@@ -17,7 +16,7 @@ export const Home = () => {
   
   useEffect(() => {
     async function getPost() {
-      const response: AxiosResponse<any> = await axios.get("/1");
+      const response = await client.get("/1");
       setPost(response.data);
     }
     getPost();
@@ -26,6 +25,7 @@ export const Home = () => {
   async function deletePost() {
     await client.delete("/1");
     alert("Post deleted!");
+    setPost({})
   }
 
   if (!post) return "No post!"
