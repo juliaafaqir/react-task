@@ -1,0 +1,29 @@
+.container{
+    margin: auto;
+    width: 100%;
+    padding:20px;
+}
+
+
+  
+.checkbox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  
+.tabs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    h3{
+        margin: 1rem;
+        cursor: pointer;
+        color: rgb(187, 150, 197);
+      }
+    h3:hover{
+      color: rgb(127, 63, 146);
+    }  
+  }
