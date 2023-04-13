@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://react-7t82sm2g4-juliaafaqir.vercel.app/",
+  "homepage": "https://react-task-khaki.vercel.app/",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
