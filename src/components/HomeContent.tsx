@@ -2,6 +2,7 @@ import { useState } from "react";
 import Style from "./HomeContent.module.css";
 import BasicForm from "./BasicForm";
 import AdvancedForm from "./AdvancedForm";
+import TableComponent from "./TableComponent";
 
 function HomeContent() {
   const [view, setView] = useState("basic");
@@ -28,6 +29,7 @@ function HomeContent() {
       </nav>
       {view === "basic" ? <BasicForm setUsers={setUsers} users={users} /> : <AdvancedForm />}
       
+      {/* // Rendering Data submitted from the form
       <div>
         <ul>
         {users &&
@@ -37,9 +39,11 @@ function HomeContent() {
           </li>
         ))}
         </ul>
-      </div>
-      
-
+      </div> */}
+      <br />
+      <br />
+       {/* Rendering Data submitted from the form (as a table)       */}
+      {users.length != 0 && <TableComponent users={users}/>}
       <br />
       <br />      
     </>
