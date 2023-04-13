@@ -1,18 +1,16 @@
-import { useState } from 'react';
-import Style from './HomeContent.module.css'
-import BasicForm from './BasicForm';
-import AdvancedForm from './AdvancedForm';
+import { useState } from "react";
+import Style from "./HomeContent.module.css";
+import BasicForm from "./BasicForm";
+import AdvancedForm from "./AdvancedForm";
 
 function HomeContent() {
-    const [view, setView] = useState("basic");
+  const [view, setView] = useState("basic");
+  const [users, setUsers] = useState([]);
+  console.log(users)
 
   return (
     <>
-      <img
-          src="/assets/homepage.jpg"
-          alt="Homepage image"
-          height="919px"
-        />
+      <img src="/assets/homepage.jpg" alt="Homepage image" height="919px" />
 
       <nav className={Style.tabs}>
         <h3
@@ -28,12 +26,24 @@ function HomeContent() {
           Advanced
         </h3>
       </nav>
-      {view === "basic" ? <BasicForm /> : <AdvancedForm />}
+      {view === "basic" ? <BasicForm setUsers={setUsers} users={users} /> : <AdvancedForm />}
+      
+      <div>
+        <ul>
+        {users &&
+        users.map((user) => (
+          <li>
+            {`Email: ${user.email}, Age:${user.age}`}
+          </li>
+        ))}
+        </ul>
+      </div>
+      
 
       <br />
-      <br />
+      <br />      
     </>
-  )
+  );
 }
 
-export default HomeContent
+export default HomeContent;
