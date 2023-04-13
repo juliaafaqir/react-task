@@ -1,6 +1,9 @@
 import { basicSchema } from "../schemas";
 import Style from "./Form.module.css";
 import { useFormik } from "formik";
+import { createContext, useState, useContext } from "react";
+
+// const UserContext = createContext(undefined);
 
 const onSubmit = async (values, actions) => {
   console.log(values);
@@ -9,7 +12,8 @@ const onSubmit = async (values, actions) => {
   actions.resetForm();
 };
 
-const BasicForm = () => {
+const BasicForm = () => {  
+  // const [user, setUser] = useState({})
   const { values, errors, touched, isSubmitting, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues: {
@@ -25,6 +29,8 @@ const BasicForm = () => {
   console.log(errors);
 
   return (
+    // <UserContext.Provider value={{user, setUser}}>
+    <>
     <form onSubmit={handleSubmit} className={Style.myForm} autoComplete="off">
       <label htmlFor="email">Email</label>
       <input
@@ -82,10 +88,12 @@ const BasicForm = () => {
           <p className={Style.error}>{errors.confirmPassword.toString()}</p>
         )}
 
-      <button className={Style.btn} type="submit">
+      <button disabled={isSubmitting} className={Style.btn} type="submit">
         Submit
       </button>
     </form>
+    </>
+    // </UserContext.Provider>
   );
 };
 export default BasicForm;
