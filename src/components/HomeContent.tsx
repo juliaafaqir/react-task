@@ -9,7 +9,7 @@ function HomeContent() {
   return (
     <>
       <img
-          src="/assets/homepage.jpg"
+          src="../assets/homepage.jpg"
           alt="Homepage image"
           height="919px"
         />

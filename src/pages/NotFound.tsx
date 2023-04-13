@@ -14,7 +14,7 @@ export function NotFound() {
 return (
         <>
         <Header />
-            <img height="670px" src="/assets/not-found.jpg" alt="Page not found img"  />
+            <img height="670px" src="../assets/not-found.jpg" alt="Page not found img"  />
             <br /><br /><br />
 \        <Footer />
         </>

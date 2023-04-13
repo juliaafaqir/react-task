@@ -5,7 +5,7 @@ export function Contact() {
     return (
         <>
         <Header />
-        <img src="/assets/about.jpg" alt="About us image"  height="700px" />
+        <img src="../assets/about.jpg" alt="About us image"  height="700px" />
         <br /><br /><br />
         <Footer />
         </>
